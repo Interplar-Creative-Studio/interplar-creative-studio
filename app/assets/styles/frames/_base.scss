@@ -1,0 +1,97 @@
+.flex{
+    display: flex; // FIXME: это костыль
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+    color: #fff;
+    font-family: Montserrat;
+    background-color: $color_bg;
+}
+
+section {
+    width: 100%;
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+}
+
+.title {
+    h3 {
+        font-size: $size_h3;
+        line-height: 39px;
+    }
+}
+
+.content_wrapper {
+    h4 {
+        font-size: $size_h4;
+        @include bebas(BebasBook);
+        margin-bottom: 0px;
+    }
+
+    p {
+        margin-bottom: 0px;
+    }
+}
+
+.content_inner {
+    font-size: $size_text;
+    border-left: 2px solid #fff;
+    padding: 16px;
+    margin-bottom: 40px;
+    // display: flex; // FIXME: возможно из-за этого всё сломается
+    // align-items: center;
+
+}
+
+.btn {
+    @include bebas(BebasRegular);
+    font-size: $size_btn;
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 29px;
+    padding: 4px;
+    border: none;
+    outline: none;
+    transition: background 0.6s, box-shadow 0s; //FIXME: Не работает плавность перхода заднего фона
+
+    &:hover {
+        @include hover();
+    }
+
+    &:active {
+        @include active()
+    }
+}
+
+.next {
+    color: #fff;
+    font-family: Montserrat;
+    font-weight: 300;
+    font-size: $size_arrow_link;
+    text-decoration: none;
+    position: absolute;
+    bottom: 70px;
+
+    &:hover {
+        color: pointer;
+        color: #fff;
+        @include hover();
+    }
+
+    &::before {
+        content: ' ';
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        left: -28px;
+        top: 2px;
+        background-image: url(../img/Vector.png); // TODO: мб сделать через svg
+    }
+}

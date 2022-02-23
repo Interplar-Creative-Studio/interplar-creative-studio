@@ -1,0 +1,9 @@
+.service_list {
+    margin-bottom: 0px;
+
+    &_item {
+        @include bebas(BebasRegular);
+        font-size: $size_text;
+        margin-top: 20px;
+    }
+}

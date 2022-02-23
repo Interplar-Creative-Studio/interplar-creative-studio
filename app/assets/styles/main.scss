@@ -2,6 +2,46 @@
 @import 'utils/libs';
 @import 'utils/fonts';
 
+@import 'utils/vars';
+@import 'utils/mixins';
+
 :root {
   font-size: 10px;
 }
+
+
+// ======== MENU =======
+@import 'frames/base';
+
+// ======== MENU ========
+@import 'frames/menu';
+
+// ======== INTRO ========
+@import 'frames/intro';
+
+// ======== ABOUT ========
+@import 'frames/about';
+
+// ======== VECTORS ========
+@import 'frames/vectors';
+
+// ======== PROCESS ========
+@import 'frames/process';
+
+// ======== CLIENTS ========
+@import 'frames/clients';
+
+// ======== FEEDBACK ========
+@import 'frames/feedback';
+
+// ======== CONTACTS ========
+@import 'frames/contacts';
+
+// ======== FOOTER ========
+@import 'frames/footer';
+
+// ======== DEBUG ========
+@import 'frames/debug';
+
+// ======== MEDIA ========
+@import 'frames/media';

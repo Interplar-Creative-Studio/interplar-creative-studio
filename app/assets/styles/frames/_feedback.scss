@@ -1,0 +1,46 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    label {
+        font-family: Montserrat;
+        font-size: $size_form_label;
+        line-height: 28px;
+        margin-top: 28px;
+    }
+
+    input,
+    textarea {
+        border: 1px solid #fff;
+        background-color: #0E0E0E;
+        font-size: $size_form;
+        color: #fff;
+        padding: 8px 16px;
+        margin-left: 16px;
+        margin-top: 24px;
+    }
+
+    // TODO: фейк загрузка файлов
+}
+
+.license {
+    font-family: Montserrat;
+    font-size: $size_license;
+    color: #6A6A6A;
+    width: 500px;
+    margin-left: 86px;
+
+    a {
+        text-decoration: underline;
+        color: #6A6A6A;
+
+        &:hover {
+            @include hover()
+        }
+
+        &:active {
+            @include active()
+        }
+    }
+}

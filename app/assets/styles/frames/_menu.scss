@@ -1,0 +1,157 @@
+.nav {
+    padding-top: 16px;
+    align-items: center;
+    display: flex;
+    position: fixed;
+    z-index: 404;
+}
+
+.menu {
+    display: flex;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    margin-bottom: 0px;
+    align-items: center;
+
+    &_item {
+        margin: 0px 35px;
+
+        &_link {
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #fff;
+            font-size: $size_menu_link;
+            padding: 7px;
+
+            @include bebas(BebasRegular);
+
+            &:hover {
+                @include hover();
+            }
+
+            &:active {
+                @include active();
+            }
+        }
+    }
+
+    &_btn {
+        margin-left: 36px;
+        font-size: $size_menu_link;
+        display: flex;
+        align-items: center;
+        @include bebas(BebasRegular);
+
+        .counter {
+            opacity: 1;
+            transition: opacity 0.2s;
+
+            position: relative;
+            padding-right: 7px;
+            // border-right: 2px solid #fff;
+        }
+    }
+
+    &_toggler {
+        padding: 10px 7px;
+        position: relative;
+        left: 0px;
+
+        transition: left 0.3s ease;
+
+        &::before{
+            content: " ";
+            width: 2px;
+            height: 24px;
+            position: absolute;
+            left: -2px;
+            top: 7px;
+            background-color: #fff;
+        }
+
+        &:hover {
+            @include hover()
+        }
+
+        &:active {
+            @include active()
+        }
+    }
+}
+
+
+
+.dropdown{
+    overflow: hidden;
+
+    &_content{
+        display: none;
+        position: absolute;
+        z-index: 405;
+        @include bebas(BebasRegular);
+        color: #fff;
+        min-width: 400px;
+        padding: 10px;
+        padding-left: 0px;
+        padding-top: 15px;
+        flex-direction: column;
+        gap: 15px;
+
+        a{
+            font-size: $size_menu_link;
+            padding: 7px;
+
+            &:hover{
+                color: #fff;
+                @include hover()
+            }
+            &:active {
+                color: #fff;
+                @include active()
+            }
+            &:visited {
+                color: #fff;
+            }
+        }
+
+        &:hover{
+            display: flex;
+        }
+    }
+}
+
+.dropdown:hover .dropdown_content {
+    display: flex;
+  }
+
+// Animation
+.menu.active{
+    opacity: 1;
+}
+.menu_toggler.active{
+    left: -48px;
+
+    &::before{
+        right: 0px;
+        left: auto;
+        animation: dash 0.3s;
+    }
+}
+.counter.active{
+    opacity: 0;
+}
+
+@keyframes dash {
+    0%  { 
+        left: -2px;
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        left: auto;
+        right: 0px;
+        opacity: 1;}
+   }

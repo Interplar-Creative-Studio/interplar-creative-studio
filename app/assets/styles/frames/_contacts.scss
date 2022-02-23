@@ -1,0 +1,20 @@
+.social_bar {
+    display: flex;
+    align-items: center;
+    gap: 72px;
+    padding-left: 32px;
+}
+
+.totop {
+    position: relative;
+
+    &::before {
+        content: ' ';
+        width: 24px;
+        height: 64px;
+        position: absolute;
+        left: -30px;
+        top: -18px;
+        background-image: url(../img/arrow_top.png);
+    }
+}

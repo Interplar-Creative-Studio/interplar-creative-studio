@@ -1,2 +1,35 @@
 // Тут происходит подключение шрифтов
 // ../../fonts/Roboto.woff2
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+
+@font-face {
+    font-family: BebasBold;
+    src: url(../fonts/BebasNeueBold.otf);
+    src: url(../fonts/BebasNeueBold.ttf);
+}
+
+@font-face {
+    font-family: BebasBook;
+    src: url(../fonts/BebasNeueBook.otf);
+    src: url(../fonts/BebasNeueBook.ttf);
+}
+
+@font-face {
+    font-family: BebasLight;
+    src: url(../fonts/BebasNeueLight.otf);
+    src: url(../fonts/BebasNeueLight.ttf);
+}
+
+@font-face {
+    font-family: BebasRegular;
+    src: url(../fonts/BebasNeueRegular.otf);
+    src: url(../fonts/BebasNeueRegular.ttf);
+}
+
+@font-face {
+    font-family: BebasThin;
+    src: url(../fonts/BebasNeueThin.otf);
+    src: url(../fonts/BebasNeueThin.ttf);
+}
