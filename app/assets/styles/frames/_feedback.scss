@@ -7,7 +7,8 @@
         font-family: Montserrat;
         font-size: $size_form_label;
         line-height: 28px;
-        margin-top: 28px;
+        margin-top: 0px;
+        margin-bottom: 17px;
     }
 
     input,
@@ -16,9 +17,10 @@
         background-color: #0E0E0E;
         font-size: $size_form;
         color: #fff;
-        padding: 8px 16px;
+        padding: 8px 16px 6px;
         margin-left: 16px;
-        margin-top: 24px;
+        margin-bottom: 24px;
+        font-family: Montserrat;
     }
 
     // TODO: фейк загрузка файлов
@@ -27,6 +29,7 @@
 .license {
     font-family: Montserrat;
     font-size: $size_license;
+    line-height: $size_license;
     color: #6A6A6A;
     width: 500px;
     margin-left: 86px;

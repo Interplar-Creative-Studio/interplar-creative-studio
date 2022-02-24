@@ -1,5 +1,6 @@
-.flex{
-    display: flex; // FIXME: это костыль
+.flex{ // FIXME: это костыль
+    display: flex; 
+    align-items: center;
 }
 
 html {
@@ -46,11 +47,12 @@ section {
     font-weight: 400;
     line-height: 2.8rem;
     border-left: 2px solid #fff;
-    padding: 16px;
+    padding: 10px 16px;
     margin-bottom: 40px;
-    // display: flex; // FIXME: возможно из-за этого всё сломается
-    // align-items: center;
+}
 
+.content_btn{
+    padding: 23px 16px;
 }
 
 .btn {
@@ -60,6 +62,7 @@ section {
     color: #fff;
     line-height: 29px;
     padding: 4px;
+    margin-left: 16px;
     border: none;
     outline: none;
     transition: background 0.6s, box-shadow 0s; //FIXME: Не работает плавность перхода заднего фона
@@ -80,7 +83,7 @@ section {
     font-size: $size_arrow_link;
     text-decoration: none;
     position: absolute;
-    bottom: 70px;
+    bottom: 64px;
 
     &:hover {
         color: pointer;

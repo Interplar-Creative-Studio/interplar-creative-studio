@@ -1,3 +1,7 @@
+#contacts{
+    align-items: flex-end;
+}
+
 .social_bar {
     display: flex;
     align-items: center;
@@ -13,7 +17,7 @@
         width: 24px;
         height: 64px;
         position: absolute;
-        left: -30px;
+        left: -46px;
         top: -18px;
         background-image: url(../img/arrow_top.png);
     }
