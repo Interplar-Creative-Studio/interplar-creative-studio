@@ -4,7 +4,7 @@ const plumber = require('gulp-plumber');
 const sass = require('gulp-sass')(require('sass'));
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
-const uncss = require('postcss-uncss');
+// const uncss = require('postcss-uncss');
 const concat = require('gulp-concat');
 
 module.exports = function scss2css_prod() {
@@ -21,9 +21,9 @@ module.exports = function scss2css_prod() {
 				'Safari >= 6',
 			],
 		}),
-		uncss({
-			html: './build/**/*.html',
-		}),
+		// uncss({
+		// 	html: './build/**/*.html',
+		// }),
 	];
 
 	return src('app/assets/styles/**/*.scss')
