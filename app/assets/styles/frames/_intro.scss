@@ -3,4 +3,27 @@ h1 {
     @include bebas(BebasBook);
     padding: 40px;
     text-align: center;
+    position: relative;
+    width: auto !important;
+
+    &::before{ // FIXME: Это костыль
+        content: ' ';
+        background-image: url(../../assets/img/h1.png);
+        background-repeat: no-repeat;
+        width: 565px;
+        height: 144px;
+        position: absolute;
+        top: 42px;
+        left: -3px;
+        opacity: 1;
+        animation: pulse 3s ease infinite;
+    }
+}
+
+@keyframes pulse {
+    0% {opacity: 1;}
+    25% {opacity: 0.8;}
+    50% {opacity: 1;}
+    75% {opacity: 0.8;}
+    100% {opacity: 1;}
 }
