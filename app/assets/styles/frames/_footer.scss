@@ -16,6 +16,17 @@ footer {
         font-family: Montserrat;
         font-weight: 300;
         font-size: 16px;
+        color: #fff;
+        padding: 5px 7px;
+        &:hover{
+            @include hover();
+        }
+        &:active{
+            @include active();
+        }
+        &:visited{
+            color: #fff;
+        }
     }
 
     .slogan,
