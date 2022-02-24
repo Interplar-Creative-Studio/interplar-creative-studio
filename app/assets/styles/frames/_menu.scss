@@ -86,7 +86,11 @@
     overflow: hidden;
 
     &_content{
-        display: none;
+        display: flex;
+        opacity: 0;
+
+        transition: opacity 0.3s ease;
+
         position: absolute;
         z-index: 405;
         @include bebas(BebasRegular);
@@ -116,13 +120,13 @@
         }
 
         &:hover{
-            display: flex;
+            opacity: 1;
         }
     }
 }
 
 .dropdown:hover .dropdown_content {
-    display: flex;
+    opacity: 1;
   }
 
 // Animation
