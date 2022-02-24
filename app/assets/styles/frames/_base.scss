@@ -84,6 +84,7 @@ section {
     text-decoration: none;
     position: absolute;
     bottom: 64px;
+    padding: 6px 10px 8px;
 
     &:hover {
         color: pointer;
@@ -97,7 +98,7 @@ section {
         height: 16px;
         position: absolute;
         left: -28px;
-        top: 2px;
+        top: 7px;
         background-image: url(../img/Vector.png); // TODO: мб сделать через svg
     }
 }

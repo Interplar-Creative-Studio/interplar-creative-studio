@@ -17,7 +17,7 @@ footer {
         font-weight: 300;
         font-size: 16px;
         color: #fff;
-        padding: 5px 7px;
+        padding: 1px 7px;
         &:hover{
             @include hover();
         }
@@ -38,6 +38,7 @@ footer {
 
     .slogan {
         margin-left: 24px;
+        margin-bottom: 2px;
     }
 
     .copyright {
