@@ -1,3 +1,15 @@
 .step_list {
     padding-left: 0px;
+
+    &_item{
+        position: relative;
+        
+    }
+
+    &_num{
+        position: absolute;
+        left: -32px;
+        top: 18px;
+        @include bebas(BebasRegular)
+    }
 }
