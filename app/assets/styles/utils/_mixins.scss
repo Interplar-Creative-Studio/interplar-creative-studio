@@ -1,14 +1,23 @@
+// @mixin hover {
+//     color: #fff;
+//     -webkit-box-shadow: inset 0 0 12px 12px #fff, inset 0 0 3px 2px #fff;
+//     box-shadow: inset 0 0 9px 11px #0e0e0e, inset 1px -1px 9px 2px #0e0e0e;
+//     background: -o-linear-gradient(125deg, white 0% 33%, #ff4b1c 33% 66%, #06ffff 66% 100%);
+//     background: linear-gradient(316deg, white 23%, #ff4b1c 46%, #06ffff 100%);
+
+//     backdrop-filter: blur(15px);
+//     cursor: pointer;
+
+//     // !idea -> drop-shadow
+// }
+
 @mixin hover {
-    color: #fff;
-    -webkit-box-shadow: inset 0 0 12px 12px #fff, inset 0 0 3px 2px #fff;
-    box-shadow: inset 0 0 9px 11px #0e0e0e, inset 1px -1px 9px 2px #0e0e0e;
-    background: -o-linear-gradient(125deg, white 0% 33%, #ff4b1c 33% 66%, #06ffff 66% 100%);
-    background: linear-gradient(316deg, white 23%, #ff4b1c 46%, #06ffff 100%);
-
-    backdrop-filter: blur(15px);
-    cursor: pointer;
-
-    // !idea -> drop-shadow
+    opacity: 0;
+    content: attr(data-hover);
+    position: absolute;
+    @include active();
+    filter: blur(5px);
+    transition: opacity 0.3s ease;;
 }
 
 

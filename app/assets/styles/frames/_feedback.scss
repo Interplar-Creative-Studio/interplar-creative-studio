@@ -37,9 +37,25 @@
     a {
         text-decoration: underline;
         color: #6A6A6A;
+        position: relative;
 
-        &:hover {
-            @include hover()
+        &:hover::before{
+            opacity: 1;
+        }
+    
+        &:hover{
+            cursor: pointer;
+            color: #fff;
+        }
+    
+        &:active {
+            @include active()
+        }
+    
+        &::before{
+            @include hover();
+            top: 7px;
+            left: 10px;
         }
 
         &:active {

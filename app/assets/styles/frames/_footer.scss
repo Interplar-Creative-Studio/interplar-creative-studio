@@ -18,9 +18,27 @@ footer {
         font-size: 16px;
         color: #fff;
         padding: 1px 7px;
-        &:hover{
-            @include hover();
+        position: relative;
+
+        &:hover::before{
+            opacity: 1;
         }
+
+        &:hover{
+            cursor: pointer;
+        }
+
+        &:active {
+            @include active()
+        }
+
+        &::before{
+            @include hover();
+            top: 3px;
+            left: 0px;
+            width: 100%;
+        }
+
         &:active{
             @include active();
         }

@@ -23,15 +23,26 @@
             color: #fff;
             font-size: $size_menu_link;
             padding: 7px;
+            position: relative;
 
             @include bebas(BebasRegular);
 
-            &:hover {
-                @include hover();
-            }
-
             &:active {
                 @include active();
+            }
+
+            &::before{
+                @include hover();
+                top: 7px;
+                left: 8px;
+            }
+    
+            &:hover::before{
+                opacity: 1;
+            }
+    
+            &:hover{
+                cursor: pointer;
             }
         }
     }
@@ -60,7 +71,7 @@
 
         transition: left 0.3s ease;
 
-        &::before{
+        &::after{
             content: " ";
             width: 2px;
             height: 24px;
@@ -70,8 +81,18 @@
             background-color: #fff;
         }
 
-        &:hover {
-            @include hover()
+        &::before{
+            @include hover();
+            top: 10px;
+            left: 5px;
+        }
+
+        &:hover::before{
+            opacity: 1;
+        }
+
+        &:hover{
+            cursor: pointer;
         }
 
         &:active {
@@ -86,7 +107,7 @@
     overflow: hidden;
 
     &_content{
-        display: flex;
+        display: none;
         opacity: 0;
 
         transition: opacity 0.3s ease;
@@ -105,17 +126,28 @@
         a{
             font-size: $size_menu_link;
             padding: 7px;
+            position: relative;
 
-            &:hover{
-                color: #fff;
-                @include hover()
-            }
             &:active {
                 color: #fff;
                 @include active()
             }
             &:visited {
                 color: #fff;
+            }
+
+            &::before{
+                @include hover();
+                top: 7px;
+                left: 5px;
+            }
+    
+            &:hover::before{
+                opacity: 1;
+            }
+    
+            &:hover{
+                cursor: pointer;
             }
         }
 
@@ -127,6 +159,7 @@
 
 .dropdown:hover .dropdown_content {
     opacity: 1;
+    display: flex;
   }
 
 // Animation
@@ -136,7 +169,7 @@
 .menu_toggler.active{
     left: -48px;
 
-    &::before{
+    &::after{
         right: 0px;
         left: auto;
         animation: dash 0.3s;

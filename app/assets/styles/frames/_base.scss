@@ -66,13 +66,24 @@ section {
     border: none;
     outline: none;
     transition: background 0.6s, box-shadow 0s; //FIXME: Не работает плавность перхода заднего фона
+    position: relative;
 
-    &:hover {
-        @include hover();
+    &:hover::before{
+            opacity: 1;
+    }
+
+    &:hover{
+        cursor: pointer;
     }
 
     &:active {
         @include active()
+    }
+
+    &::before{
+        @include hover();
+        top: 2px;
+        left: 5px;
     }
 }
 
@@ -86,13 +97,25 @@ section {
     bottom: 64px;
     padding: 6px 10px 8px;
 
-    &:hover {
-        color: pointer;
-        color: #fff;
-        @include hover();
+    &:hover::before{
+        opacity: 1;
     }
 
-    &::before {
+    &:hover{
+        cursor: pointer;
+    }
+
+    &:active {
+        @include active()
+    }
+
+    &::before{
+        @include hover();
+        top: 7px;
+        left: 10px;
+    }
+
+    &::after {
         content: ' ';
         width: 16px;
         height: 16px;
