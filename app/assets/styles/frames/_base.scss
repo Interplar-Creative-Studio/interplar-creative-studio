@@ -49,6 +49,13 @@ section {
     border-left: 2px solid #fff;
     padding: 10px 16px;
     margin-bottom: 40px;
+
+    p {
+        margin-bottom: 16px;
+        &:last-child{
+            margin-bottom: 0px;
+        }
+    }
 }
 
 .content_btn{
