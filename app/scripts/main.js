@@ -12,14 +12,16 @@ menu_toggler.addEventListener("click", function(){
 })
 
 // HOVER
+let intro_h1   = document.querySelector('#intro h1');
 let nav_links  = document.querySelectorAll('.menu a');
 let btns       = document.querySelectorAll('.btn');
 let next_links = document.querySelectorAll('.next');
 let footer_email = document.querySelector('#footer .email');
 // let license_links = document.querySelectorAll('.license a'); // это лишнее, там слишком маленький текст
 
+intro_h1.setAttribute('data-hover', intro_h1.innerHTML.toUpperCase())
 menu_toggler.setAttribute('data-hover', menu_toggler.innerHTML.toUpperCase())
-footer_email.setAttribute('data-hover',footer_email.innerHTML.toUpperCase())
+footer_email.setAttribute('data-hover', footer_email.innerHTML.toUpperCase())
 
 nav_links.forEach(element => {
     let text = element.innerHTML

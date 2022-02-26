@@ -6,20 +6,14 @@ h1 {
     position: relative;
     width: auto !important;
 
-    &::before{ // FIXME: Это костыль
-        content: ' ';
-        background-image: url(../../assets/img/h1.png);
-        background-repeat: no-repeat;
-        width: 565px;
-        height: 144px;
-        position: absolute;
-        top: 42px;
-        left: -3px;
-        opacity: 1;
+    &::before{
+        @include hover();
+        top: 40px;
+        left: 7px;
         animation: pulse 3s ease infinite;
     }
 }
-
+//animation: pulse 3s ease infinite;
 @keyframes pulse {
     0% {opacity: 1;}
     25% {opacity: 0.8;}
