@@ -7,12 +7,42 @@
     align-items: center;
     gap: 72px;
     padding-left: 32px;
+
+    // img{
+    //     &:hover{
+    //         cursor: pointer;
+    //     }
+
+    //     &:active{
+    //         @include active();
+    //     }
+    // }
+
+    // TODO: Разобраться как работает градиент
+    a:hover{
+        svg{
+            path.svg_original{
+                fill: #ffffff00
+            }   
+            path.svg_blur{
+                stroke: url(#gradient);
+                filter: url(#blur);
+            }
+        }
+    }
+    a:active{
+        svg{
+            path{
+                stroke: url(#gradient);
+            }
+        }
+    }
 }
 
 .totop {
     position: relative;
 
-    &::before {
+    &::after {
         content: ' ';
         width: 24px;
         height: 64px;
