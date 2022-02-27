@@ -1,5 +1,6 @@
 console.log('scripts/main.js');
 
+//=====================================================================
 // МЕНЮ
 let menu_toggler = document.querySelector('.menu_toggler')
 let menu_counter = document.querySelector('.counter')
@@ -11,6 +12,7 @@ menu_toggler.addEventListener("click", function () {
     menu_counter.classList.toggle("active")
 })
 
+//=====================================================================
 // HOVER
 let intro_h1 = document.querySelector('#intro h1');
 let nav_links = document.querySelectorAll('.menu a');
@@ -42,13 +44,13 @@ next_links.forEach(element => {
 //     element.setAttribute('data-hover', text)
 // });
 
+//=====================================================================
 // SCROLL COUNTER
 let scroll_position = 0
 let ticking = false
 let windowHeight = window.innerHeight
 
 function doSomething(scroll_pos) {
-    menu_counter.innerHTML = Math.floor(scroll_pos / (windowHeight - 10)) // изменение счётчика в меню
     menu_counter.innerHTML = Math.floor(scroll_pos / (windowHeight - 10)) + '/7'// изменение счётчика в меню
 }
 
@@ -63,4 +65,16 @@ window.addEventListener('scroll', function (e) {
 
         ticking = true
     }
+});
+
+//=====================================================================
+//SCROLL SECTIONS
+import fullpage from './fullpage.min.js';
+
+var myFullpage = new fullpage('#app', {
+    
+    scrollBar: true,
+    verticalCentered: false,
+    // anchors: ['about', 'vectors', 'process', 'team', 'clients', 'contacts'],
+    // menu: '.menu'
 });
