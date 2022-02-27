@@ -3,8 +3,30 @@ footer {
     margin-bottom: 40px;
 
     .footer_logo {
-        width: 170px;
-        height: 34px;
+        @include bebas(BebasBook);
+        color: #fff;
+        font-size: 24px;
+        text-transform: uppercase;
+        position: relative;
+
+        &::before{
+            @include hover();
+            top: 0px;
+            left: 0px;
+            animation: pulse 3s ease infinite;
+        }
+
+        &::after{
+            content: ' ';
+            background-image: url(../../assets/img/logo_Interplar.png);
+            width: 18px;
+            height: 24px;
+            position: absolute;
+            left: -30px;
+            top: 0px;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
 
         &_wrapper {
             display: flex;
@@ -19,6 +41,7 @@ footer {
         color: #fff;
         padding: 1px 7px;
         position: relative;
+        margin: auto;
 
         &:hover::before{
             opacity: 1;
@@ -50,7 +73,7 @@ footer {
     .slogan,
     .copyright {
         @include bebas(BebasBook);
-        font-size: 1.4rem;
+        font-size: 14px;
         text-transform: uppercase;
     }
 
