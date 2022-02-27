@@ -41,3 +41,25 @@ next_links.forEach(element => {
 //     let text = element.innerHTML
 //     element.setAttribute('data-hover', text)
 // });
+
+// SCROLL COUNTER
+let scroll_position = 0
+let ticking = false
+let windowHeight = window.innerHeight
+
+function doSomething(scroll_pos) {
+    menu_counter.innerHTML = Math.floor(scroll_pos / (windowHeight - 10)) // изменение счётчика в меню
+}
+
+window.addEventListener('scroll', function (e) {
+    scroll_position = window.scrollY
+
+    if (!ticking) {
+        window.requestAnimationFrame(function () {
+            doSomething(scroll_position)
+            ticking = false
+        });
+
+        ticking = true
+    }
+});
