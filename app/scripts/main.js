@@ -49,6 +49,7 @@ let windowHeight = window.innerHeight
 
 function doSomething(scroll_pos) {
     menu_counter.innerHTML = Math.floor(scroll_pos / (windowHeight - 10)) // изменение счётчика в меню
+    menu_counter.innerHTML = Math.floor(scroll_pos / (windowHeight - 10)) + '/7'// изменение счётчика в меню
 }
 
 window.addEventListener('scroll', function (e) {
