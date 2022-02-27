@@ -11,6 +11,19 @@ body {
     color: #fff;
     font-family: Montserrat;
     background-color: $color_bg;
+    // overflow-y: hidden;
+}
+
+body::-webkit-scrollbar {
+    width: 2px;
+    background-color: rgba(#fff, 0.15);
+    border-radius: 0px;
+    height: 200px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #fff;
+    border-radius: 0px;
 }
 
 section {
@@ -102,7 +115,8 @@ section {
     text-decoration: none;
     position: absolute;
     bottom: 64px;
-    padding: 6px 10px 8px;
+    // left: 135px;
+    padding: 6px 26px 8px;
 
     &:hover::before{
         opacity: 1;
@@ -119,7 +133,7 @@ section {
     &::before{
         @include hover();
         top: 7px;
-        left: 10px;
+        left: 24px;
     }
 
     &::after {
@@ -127,7 +141,7 @@ section {
         width: 16px;
         height: 16px;
         position: absolute;
-        left: -28px;
+        left: -7px;
         top: 7px;
         background-image: url(../img/Vector.png); // TODO: мб сделать через svg
     }

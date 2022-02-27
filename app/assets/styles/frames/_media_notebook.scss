@@ -1,0 +1,36 @@
+@media screen and (max-width: 1240px) {
+
+    html{
+        font-size: 8px;
+    }
+
+    .menu_item {
+        margin: 0px 14px;
+    }
+
+    .content_btn {
+        padding: 8px 15px;
+    }
+
+    .btn {
+        margin-left: 10px;
+    }
+
+    .license{
+        width: 265px;
+        margin-left: 110px;
+    }
+
+    .totop::after{
+        left: -40px;
+    }
+
+    .social_bar{
+        gap: 30px;
+    }
+
+    footer .slogan,
+    footer .copyright {
+        font-size: 12px;
+    }
+}
