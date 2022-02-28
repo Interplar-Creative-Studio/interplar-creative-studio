@@ -5,16 +5,17 @@ block title
   link(rel="stylesheet", href="assets/css/styles.min.css")
 
 block content
-
-  include ../includes/modules/nav
-  include ../includes/modules/intro
-  include ../includes/modules/about
-  include ../includes/modules/vectors
-  include ../includes/modules/process
-  include ../includes/modules/team
-  include ../includes/modules/clients
-  include ../includes/modules/feedback
-  include ../includes/modules/contacts
+  .splide__track
+    .splide__list
+      include ../includes/modules/nav
+      include ../includes/modules/intro
+      include ../includes/modules/about
+      include ../includes/modules/vectors
+      include ../includes/modules/process
+      include ../includes/modules/team
+      include ../includes/modules/clients
+      include ../includes/modules/feedback
+      include ../includes/modules/contacts
 
 block scripts
   script(src="assets/scripts/main.min.js")

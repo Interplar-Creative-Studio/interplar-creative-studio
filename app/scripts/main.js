@@ -69,3 +69,17 @@ window.addEventListener('scroll', function (e) {
 
 //=====================================================================
 //SCROLL SECTIONS
+import { Splide } from '@splidejs/splide';
+import { URLHash } from '@splidejs/splide-extension-url-hash';
+
+let splide = new Splide( '.splide', {
+    direction: 'ttb',
+    height   : '100vh',
+    wheel    : true,
+    arrows   : false,
+    isNavigation: true,
+    pagination: false
+  })
+
+splide.mount( { URLHash } )
+
