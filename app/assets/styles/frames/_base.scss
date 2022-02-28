@@ -35,6 +35,13 @@ section {
     position: relative;
 }
 
+.row{
+    margin-bottom: 40px;
+    &:last-child{
+        margin-bottom: 0px;
+    }
+}
+
 .title {
     h3 {
         font-size: $size_h3;
@@ -62,6 +69,10 @@ section {
     border-left: 2px solid #fff;
     padding: 10px 16px;
     margin-bottom: 40px;
+
+    &:last-child{
+        margin-bottom: 0px;
+    }
 
     p {
         margin-bottom: 16px;
@@ -145,12 +156,4 @@ section {
         top: 7px;
         background-image: url(../img/Vector.png); // TODO: мб сделать через svg
     }
-}
-
-
-
-
-.fp-tableCell{
-    height: auto !important;
-    margin: auto;
 }
