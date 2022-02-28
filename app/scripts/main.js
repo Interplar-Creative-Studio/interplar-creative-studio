@@ -69,12 +69,3 @@ window.addEventListener('scroll', function (e) {
 
 //=====================================================================
 //SCROLL SECTIONS
-import fullpage from './fullpage.min.js';
-
-var myFullpage = new fullpage('#app', {
-    
-    scrollBar: true,
-    verticalCentered: false,
-    // anchors: ['about', 'vectors', 'process', 'team', 'clients', 'contacts'],
-    // menu: '.menu'
-});
