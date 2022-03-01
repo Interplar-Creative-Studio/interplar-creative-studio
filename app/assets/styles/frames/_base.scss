@@ -33,6 +33,8 @@ section {
     flex-wrap: wrap;
     align-items: center;
     position: relative;
+
+    padding: 64px 0px;
 }
 
 .row{
@@ -118,7 +120,6 @@ section {
     }
 }
 
-.next {
 .next, .back {
     color: #fff;
     font-family: Montserrat;
