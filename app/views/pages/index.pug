@@ -17,5 +17,11 @@ block content
       include ../includes/modules/feedback
       include ../includes/modules/contacts
 
+      .contact_splide.splide__slide(data-splide-hash="contact")
+        .splide__track
+          .splide__list
+            include ../includes/modules/contacts
+            include ../includes/modules/recruitment
+
 block scripts
   script(src="assets/scripts/main.min.js")

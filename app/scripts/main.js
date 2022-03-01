@@ -18,6 +18,7 @@ let intro_h1 = document.querySelector('#intro h1');
 let nav_links = document.querySelectorAll('.menu a');
 let btns = document.querySelectorAll('.btn');
 let next_links = document.querySelectorAll('.next');
+let back_link = document.querySelector('.back');
 let footer_email = document.querySelector('#footer .email');
 let footer_logo = document.querySelector('.footer_logo');
 // let license_links = document.querySelectorAll('.license a'); // это лишнее, там слишком маленький текст
@@ -26,6 +27,7 @@ intro_h1.setAttribute('data-hover', intro_h1.innerHTML.toUpperCase())
 menu_toggler.setAttribute('data-hover', menu_toggler.innerHTML.toUpperCase())
 footer_email.setAttribute('data-hover', footer_email.innerHTML.toUpperCase())
 footer_logo.setAttribute('data-hover', footer_logo.innerHTML.toUpperCase())
+back_link.setAttribute('data-hover', back_link.innerHTML.toUpperCase())
 
 nav_links.forEach(element => {
     let text = element.innerHTML
@@ -39,47 +41,81 @@ next_links.forEach(element => {
     let text = element.innerHTML
     element.setAttribute('data-hover', text)
 });
-// license_links.forEach(element => {
-//     let text = element.innerHTML
-//     element.setAttribute('data-hover', text)
-// });
-
-//=====================================================================
-// SCROLL COUNTER
-let scroll_position = 0
-let ticking = false
-let windowHeight = window.innerHeight
-
-function doSomething(scroll_pos) {
-    menu_counter.innerHTML = Math.floor(scroll_pos / (windowHeight - 10)) + '/7'// изменение счётчика в меню
-}
-
-window.addEventListener('scroll', function (e) {
-    scroll_position = window.scrollY
-
-    if (!ticking) {
-        window.requestAnimationFrame(function () {
-            doSomething(scroll_position)
-            ticking = false
-        });
-
-        ticking = true
-    }
-});
 
 //=====================================================================
 //SCROLL SECTIONS
 import { Splide } from '@splidejs/splide';
 import { URLHash } from '@splidejs/splide-extension-url-hash';
 
-let splide = new Splide( '.splide', {
-    direction: 'ttb',
-    height   : '100vh',
-    wheel    : true,
-    arrows   : false,
+let inner_slider_config = {
+    height: '100vh',
+    width: '100vw',
+    wheel: false,
+    arrows: false,
     isNavigation: true,
-    pagination: false
-  })
+    pagination: false,
+    drag: false,
+    speed: 700,
+}
 
-splide.mount( { URLHash } )
+// прокрутка страницы (вертикальная)
+let splide = new Splide('.splide', {
+    ...inner_slider_config,
+    direction: 'ttb',
+    wheel: true
+})
+splide.mount({ URLHash })
+
+
+let contact_splide = new Splide('.contact_splide', {
+    ...inner_slider_config,
+})
+contact_splide.mount({ URLHash })
+
+
+
+splide.on('move', function () {
+    // SCROLL COUNTER
+    switch (splide.index) {
+        case 0:
+            menu_counter.innerHTML = '1/7'
+            break;
+        case 1:
+            menu_counter.innerHTML = '1/7'
+            break;
+        case 2:
+            menu_counter.innerHTML = '2/7'
+            break;
+        case 3:
+            menu_counter.innerHTML = '2/7'
+            break;
+        case 4:
+            menu_counter.innerHTML = '3/7'
+            break;
+        case 5:
+            menu_counter.innerHTML = '3/7'
+            break;
+        case 6:
+            menu_counter.innerHTML = '4/7'
+            break;
+        case 7:
+            menu_counter.innerHTML = '5/7'
+            break;
+        case 8:
+            menu_counter.innerHTML = '6/7'
+            break;
+        case 9:
+            menu_counter.innerHTML = '6/7'
+            break;
+        case 10:
+            menu_counter.innerHTML = '7/7'
+            break;
+
+        default:
+            menu_counter.innerHTML = splide.index + '/7'
+    }
+})
+
+
+
 
