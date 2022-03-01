@@ -119,6 +119,7 @@ section {
 }
 
 .next {
+.next, .back {
     color: #fff;
     font-family: Montserrat;
     font-weight: 300;
@@ -157,3 +158,20 @@ section {
         background-image: url(../img/Vector.png); // TODO: мб сделать через svg
     }
 }
+
+
+.back {
+    @include bebas(BebasRegular);
+    font-size: 16px;
+
+    &::after{
+        content: ' ';
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        left: -7px;
+        top: 5px;
+        background-image: url(../img/Vector_back.png); // TODO: мб сделать через svg
+    }
+}
+
