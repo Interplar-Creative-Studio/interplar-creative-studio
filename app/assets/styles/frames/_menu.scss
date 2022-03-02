@@ -4,18 +4,18 @@
     display: flex;
     position: fixed;
     z-index: 404;
+    width: 100%;
 }
 
 .menu {
-    display: flex;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-
+    display: none;
+    justify-content: space-between;
+    width: 95%;
     margin-bottom: 0px;
     align-items: center;
 
     &_item {
-        margin: 0px 35px;
+        // margin: 0px 35px;
 
         &_link {
             text-transform: uppercase;
@@ -48,11 +48,14 @@
     }
 
     &_btn {
-        margin-left: 36px;
+        // margin-left: 36px;
+        margin-left: -30px;
         font-size: $size_menu_link;
         display: flex;
         align-items: center;
         @include bebas(BebasRegular);
+
+        width: 4%;
 
         .counter {
             opacity: 1;
@@ -164,7 +167,11 @@
 
 // Animation
 .menu.active{
-    opacity: 1;
+    display: flex;
+
+    .menu_item{
+        animation: fadein 0.3s ease;
+    }
 }
 .menu_toggler.active{
     left: -48px;
@@ -177,6 +184,15 @@
 }
 .counter.active{
     opacity: 0;
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 @keyframes dash {
