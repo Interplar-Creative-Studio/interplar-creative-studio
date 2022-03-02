@@ -23,6 +23,9 @@
 
     .social_bar{
         gap: 30px;
+        &_inner{
+            gap: 30px;
+        }
     }
 
     footer .slogan,

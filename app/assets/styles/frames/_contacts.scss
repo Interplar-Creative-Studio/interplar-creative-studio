@@ -10,15 +10,10 @@
     padding-top: 18px;
     padding-bottom: 18px;
 
-    // img{
-    //     &:hover{
-    //         cursor: pointer;
-    //     }
-
-    //     &:active{
-    //         @include active();
-    //     }
-    // }
+    &_inner{
+        display: flex;
+        gap: 72px;
+    }
 
     // TODO: Разобраться как работает градиент
     a:hover{

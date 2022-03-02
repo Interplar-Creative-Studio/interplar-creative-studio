@@ -85,6 +85,10 @@ section {
     }
 }
 
+.fix_offset{
+    margin-bottom: 40px;
+}
+
 .content_btn{
     padding: 23px 16px;
 }
@@ -175,5 +179,9 @@ section {
         top: 5px;
         background-image: url(../img/Vector_back.png); // TODO: мб сделать через svg
     }
+}
+
+.about_prev, .clients_prev, .team_prev{
+    display: none;
 }
 
