@@ -1,0 +1,139 @@
+@media screen and (max-width: 460px) {
+
+    html{
+        font-size: 6.5px;
+    }
+
+    .intro{
+        display: flex;
+        h1{
+            margin: auto;
+        }
+    }
+
+    section{
+        height: calc(100vh - calc(100vh - 100%));
+    }
+
+    .container{
+        max-width: 328px;
+    }
+
+    .clients_logo{
+        flex-direction: column;
+        height: 400px;
+    }
+
+    .content_inner.flex{
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+    }
+
+    .form{
+        label{
+            // margin-bottom: 10px;
+            margin-bottom: 4px;
+        }
+
+        input{
+            margin-bottom: 12px;
+            margin-left: 8px;
+            padding: 7px 9px 5px;
+        }
+
+        textarea{
+            height: 112px;
+            margin-left: 8px;
+            margin-bottom: 8px;
+            padding: 7px 9px 5px;
+        }
+
+        .form_email{
+            margin-bottom: 8px;
+        }
+        
+    }
+
+    .license{
+        position: absolute;
+        margin-left: 0px;
+        top: 66px;
+        left: 0px;
+        font-size: 10px;
+        line-height: 11px;
+        width: 100%;
+    }
+
+    .footer_logo_wrapper, footer .social_bar{
+        flex-direction: column;
+    }
+
+    footer .footer_logo_wrapper{
+        align-items: flex-start;
+    }
+
+    footer .slogan{
+        margin: 0px;
+    }
+
+    footer .social_bar{
+        gap: 0px;
+        align-items: flex-start;
+    }
+
+    footer .email,footer .copyright {
+        margin: 0px;
+    }
+
+    footer .email{
+        padding: 0px;
+    }
+
+    .next, .back {
+        bottom: 24px;
+    }
+
+
+    .nav.active{
+        background-color: $color_bg;
+    }
+
+    .menu.active{
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 26px;
+        height: 100vh;
+        width: auto;
+        padding-top: 10px;
+    }
+
+    .nav .container{
+            // max-width: 100%;
+            .row{
+                align-items: flex-start
+            }
+    }
+
+    // .menu_btn{
+    //     margin-left: 17px;
+    // }
+
+    .menu{
+        justify-content: flex-start;
+        gap: 32px;
+
+        .back{
+            left: 24px;
+        }
+    }
+
+    .dropdown_content{
+        min-width: auto;
+        display: flex;
+        opacity: 1;
+        gap: 32px;
+        padding: 32px 34px 0px;
+    }
+
+}

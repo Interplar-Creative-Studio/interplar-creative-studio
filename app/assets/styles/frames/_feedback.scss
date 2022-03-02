@@ -65,5 +65,9 @@
         &:active {
             @include active()
         }
+
+        &:visited {
+            color: #6A6A6A !important;
+        }
     }
 }

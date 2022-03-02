@@ -2,11 +2,21 @@ console.log('scripts/main.js');
 
 //=====================================================================
 // МЕНЮ
+let nav = document.querySelector('.nav')
 let menu_toggler = document.querySelector('.menu_toggler')
 let menu_counter = document.querySelector('.counter')
 let menu_bar = document.querySelector('.menu')
+let menu_back = document.querySelector('.nav .back')
 
 menu_toggler.addEventListener("click", function () {
+    nav.classList.toggle("active")
+    menu_bar.classList.toggle("active")
+    menu_toggler.classList.toggle("active")
+    menu_counter.classList.toggle("active")
+})
+
+menu_back.addEventListener("click", function () {
+    nav.classList.toggle("active")
     menu_bar.classList.toggle("active")
     menu_toggler.classList.toggle("active")
     menu_counter.classList.toggle("active")
@@ -63,6 +73,15 @@ let splide = new Splide('.splide', {
     ...inner_slider_config,
     direction: 'ttb',
     wheel: true
+    wheel: true,
+    breakpoints: {
+        905: {
+            drag: true,
+            autoHeight: true,
+            dragMinThreshold: 1,
+            height: '100vh',
+        }
+    }
 })
 splide.mount({ URLHash })
 
@@ -76,6 +95,7 @@ contact_splide.mount({ URLHash })
 
 splide.on('move', function () {
     // SCROLL COUNTER
+    // SCROLL COUNTER (костыли XD)
     switch (splide.index) {
         case 0:
             menu_counter.innerHTML = '1/7'

@@ -120,5 +120,57 @@
     .about_prev, .clients_prev, .team_prev{
         display: flex;
     }
+
+    .license{
+        margin-left: auto;
+    }
+
+
+
+    // мобилки меню
+    .dropdown_content{
+        position: relative;
+    }
+
+    .nav.active{
+        background-color: $color_bg;
+    }
+
+    .menu.active{
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 26px;
+        height: 100vh;
+        width: auto;
+        padding-top: 10px;
+    }
+
+    .nav .container{
+            // max-width: 100%;
+            .row{
+                align-items: flex-start
+            }
+    }
+
+    // .menu_btn{
+    //     margin-left: 17px;
+    // }
+
+    .menu{
+        justify-content: flex-start;
+        gap: 32px;
+
+        .back{
+            left: 24px;
+        }
+    }
+
+    .dropdown_content{
+        min-width: auto;
+        display: flex;
+        opacity: 1;
+        gap: 32px;
+        padding: 32px 34px 0px;
+    }
     
 }
