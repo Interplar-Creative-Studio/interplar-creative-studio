@@ -1,61 +1,66 @@
 @media screen and (max-width: 460px) {
 
-    html{
+    html {
         font-size: 6.5px;
     }
 
-    .intro{
+    .intro {
         display: flex;
-        h1{
+
+        h1 {
             margin: auto;
         }
     }
 
-    section{
+    section {
         height: calc(100vh - calc(100vh - 100%));
     }
 
-    .container{
+    .container {
         max-width: 328px;
     }
 
-    .clients_logo{
+    .clients_logo {
         flex-direction: column;
         height: 400px;
     }
 
-    .content_inner.flex{
+    .content_inner.flex {
         flex-direction: column;
         align-items: flex-start;
         position: relative;
     }
 
-    .form{
-        label{
+    .form {
+        label {
             // margin-bottom: 10px;
             margin-bottom: 4px;
         }
 
-        input{
+        input {
             margin-bottom: 12px;
             margin-left: 8px;
             padding: 7px 9px 5px;
         }
 
-        textarea{
+        textarea {
             height: 112px;
             margin-left: 8px;
             margin-bottom: 8px;
             padding: 7px 9px 5px;
         }
 
-        .form_email{
+        .form_file_mine {
+            padding: 3px 9px;
+        }
+
+        .form_email {
             margin-bottom: 8px;
         }
-        
+
     }
 
-    .license{
+    .license {
         position: absolute;
         margin-left: 0px;
         top: 66px;
@@ -65,42 +70,49 @@
         width: 100%;
     }
 
-    .footer_logo_wrapper, footer .social_bar{
+    .footer_logo_wrapper,
+    footer .social_bar {
         flex-direction: column;
     }
 
-    footer .footer_logo_wrapper{
+    footer .footer_logo_wrapper {
         align-items: flex-start;
     }
 
-    footer .slogan{
+    footer .slogan {
         margin: 0px;
     }
 
-    footer .social_bar{
+    footer .social_bar {
         gap: 0px;
         align-items: flex-start;
     }
 
-    footer .email,footer .copyright {
+    footer .email,
+    footer .copyright {
         margin: 0px;
     }
 
-    footer .email{
+    footer .email {
         padding: 0px;
     }
 
-    .next, .back, footer {
+    .next,
+    .back {
         // bottom: 24px;
-        bottom: 100px; // Мб этот стиль следовало перенести в _media_tablet_min.scss
+        bottom: 24px; // Мб этот стиль следовало перенести в _media_tablet_min.scss
     }
 
+    // footer{
+    //     bottom: 260px;
+    // }
 
-    .nav.active{
+
+    .nav.active {
         background-color: $color_bg;
     }
 
-    .menu.active{
+    .menu.active {
         flex-direction: column;
         align-items: flex-start;
         padding-left: 26px;
@@ -109,32 +121,37 @@
         padding-top: 10px;
     }
 
-    .nav .container{
-            // max-width: 100%;
-            .row{
-                align-items: flex-start
-            }
+    .nav .container {
+
+        // max-width: 100%;
+        .row {
+            align-items: flex-start
+        }
     }
 
     // .menu_btn{
     //     margin-left: 17px;
     // }
 
-    .menu{
+    .menu {
         justify-content: flex-start;
         gap: 32px;
 
-        .back{
+        .back {
             left: 24px;
         }
     }
 
-    .dropdown_content{
+    .dropdown_content {
         min-width: auto;
         display: flex;
         opacity: 1;
         gap: 32px;
         padding: 32px 34px 0px;
+    }
+
+    html, body{
+        overflow: hidden;
     }
 
 }

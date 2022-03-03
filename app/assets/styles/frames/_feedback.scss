@@ -12,7 +12,8 @@
     }
 
     input,
-    textarea,.form_file_mine {
+    textarea,
+    .form_file_mine {
         border: 1px solid #fff;
         background-color: #0E0E0E;
         font-size: $size_form;
@@ -26,6 +27,7 @@
 
     .form_file_mine{
         margin-bottom: 4px;
+        padding: 6px 16px;
     }
 
     .form_file {

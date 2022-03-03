@@ -2,6 +2,7 @@
 
     section.notnoise::after{
         content: ' ';
+        display: none;
     }
 
     section::after{
@@ -12,7 +13,11 @@
     section.is-visible::after{
         // вкдючить / выключить noise
         // animation: noise 0.2s ease 0s;
+
+        // удалить нижнее, чтобы запустить анимацию
         animation: none;
+        content: "";
+        height: 0px;
     }
 
     .title {
