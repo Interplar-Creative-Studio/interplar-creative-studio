@@ -7,7 +7,12 @@ let menu_toggler = document.querySelector('.menu_toggler')
 let menu_counter = document.querySelector('.counter')
 let menu_bar = document.querySelector('.menu')
 let menu_back = document.querySelector('.nav .back')
+let nav_links = document.querySelectorAll('.menu a');
+let totop = document.querySelector('.totop');
 
+let device_width = document.documentElement.clientWidth // ширина экрана
+
+// меню на мобилке
 menu_toggler.addEventListener("click", function () {
     nav.classList.toggle("active")
     menu_bar.classList.toggle("active")
@@ -22,10 +27,24 @@ menu_back.addEventListener("click", function () {
     menu_counter.classList.toggle("active")
 })
 
+
+// Закрытие меню после клика на кнопку в мобильной версии
+if (device_width < 600){
+    nav_links.forEach(element => {
+        element.addEventListener("click", function() {
+            nav.classList.toggle("active")
+            menu_bar.classList.toggle("active")
+            menu_toggler.classList.toggle("active")
+            menu_counter.classList.toggle("active")
+        })
+    });
+}
+
+
 //=====================================================================
 // HOVER
+// подтягивает текст из тегов и пишет его в data-атрибут, который после вызывается в scss
 let intro_h1 = document.querySelector('#intro h1');
-let nav_links = document.querySelectorAll('.menu a');
 let btns = document.querySelectorAll('.btn');
 let next_links = document.querySelectorAll('.next');
 let back_link = document.querySelector('.back');
@@ -68,6 +87,7 @@ window.addEventListener('resize', () => {
 import { Splide } from '@splidejs/splide';
 import { URLHash } from '@splidejs/splide-extension-url-hash';
 
+// конфиг для слайдера
 let inner_slider_config = {
     height: '100vh',
     width: '100vw',
@@ -95,13 +115,13 @@ let splide = new Splide('.splide', {
 })
 splide.mount({ URLHash })
 
-
+// прокрутка горизонтальная в блоке контакты
 let contact_splide = new Splide('.contact_splide', {
     ...inner_slider_config,
 })
 contact_splide.mount({ URLHash })
 
-
+// функция для установки правильного значения на счётчике
 function setMenuCount(device_width){
     if (device_width > 600){
         menu_counter.innerHTML = config_counter['desktop'].slideIndex[splide.index] + '/7'
@@ -111,6 +131,7 @@ function setMenuCount(device_width){
     }
 }
 
+// конфиг счётчика
 const config_counter = {
     desktop : {
         slideIndex : [0, 1, 2, 2, 3, 3, 4, 5, 6, 6, 7, 7]
@@ -120,11 +141,9 @@ const config_counter = {
     }
 }
 
-let totop = document.querySelector('.totop');
-let device_width = document.documentElement.clientWidth
-
+// Убираю псевдо-секции на больших экранах, чтобы не было тротлинга прокрутки
 if (device_width > 600) {
-    splide.remove( '.prev' ); // Убираю псевдо-секции чтобы небыло тротлинга прокрутки
+    splide.remove( '.prev' ); 
 
     // next  |=> clients_prev -> clients 3
     //       |=> team_prev    -> team 2
@@ -136,10 +155,10 @@ if (device_width > 600) {
     totop.setAttribute('href', '#about')
 }
 
+// обновление счётчика в меню
 splide.on('move', function () {
     // SCROLL COUNTER (костыли XD)
     device_width = document.documentElement.clientWidth
-
     setMenuCount(device_width)
 
 })
@@ -148,7 +167,7 @@ splide.on('move', function () {
 let visible_block = document.querySelector('.is-visible')
 splide.on('move', function () {
 
-    visible_block.classList.remove('is-visible')
+    visible_block.classList.remove('is-visible') // руками убираю класс, т.к. библиотека делает это с задержкой
 
     if (splide.index > 0){
         if (nav.classList.contains('hide')) nav.classList.remove('hide')
@@ -162,6 +181,7 @@ splide.on('move', function () {
 
 })
 
+// инициализация счётчика при загрузке страницы
 if ( splide.state.is( Splide.STATES.IDLE ) ) {
     if(splide.index == 0){
         nav.classList.add('hide');
