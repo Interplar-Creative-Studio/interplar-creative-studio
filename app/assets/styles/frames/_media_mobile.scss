@@ -90,8 +90,9 @@
         padding: 0px;
     }
 
-    .next, .back {
-        bottom: 24px;
+    .next, .back, footer {
+        // bottom: 24px;
+        bottom: 100px; // Мб этот стиль следовало перенести в _media_tablet_min.scss
     }
 
 

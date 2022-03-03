@@ -52,7 +52,19 @@ next_links.forEach(element => {
 });
 
 //=====================================================================
-//SCROLL SECTIONS
+// VIEWPORT (NOT WORK!)
+
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+window.addEventListener('resize', () => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+})
+
+
+//=====================================================================
+// SCROLL SECTIONS
 import { Splide } from '@splidejs/splide';
 import { URLHash } from '@splidejs/splide-extension-url-hash';
 
