@@ -31,7 +31,6 @@ let next_links = document.querySelectorAll('.next');
 let back_link = document.querySelector('.back');
 let footer_email = document.querySelector('#footer .email');
 let footer_logo = document.querySelector('.footer_logo');
-// let license_links = document.querySelectorAll('.license a'); // это лишнее, там слишком маленький текст
 
 intro_h1.setAttribute('data-hover', intro_h1.innerHTML.toUpperCase())
 menu_toggler.setAttribute('data-hover', menu_toggler.innerHTML.toUpperCase())
@@ -91,51 +90,43 @@ let contact_splide = new Splide('.contact_splide', {
 })
 contact_splide.mount({ URLHash })
 
+const config_counter = {
+    desktop : {
+        slideIndex : [0, 1, 2, 2, 3, 3, 4, 5, 6, 6, 7, 7]
+    },
+    mobile : {
+        slideIndex : [0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7]
+    }
+}
 
+let totop = document.querySelector('.totop');
+let device_width = document.documentElement.clientWidth
+if (device_width > 600) {
+    splide.remove( '.prev' ); // Убираю псевдо-секции чтобы небыло тротлинга прокрутки
+
+    //
+    // next  |=> clients_prev -> clients 3
+    //       |=> team_prev    -> team 2
+
+    // totop |=> about_prev   -> about
+
+    next_links[2].setAttribute('href', '#team')
+    next_links[3].setAttribute('href', '#clients')
+    totop.setAttribute('href', '#about')
+}
 
 splide.on('move', function () {
-    // SCROLL COUNTER
     // SCROLL COUNTER (костыли XD)
-    switch (splide.index) {
-        case 0:
-            menu_counter.innerHTML = '1/7'
-            break;
-        case 1:
-            menu_counter.innerHTML = '1/7'
-            break;
-        case 2:
-            menu_counter.innerHTML = '2/7'
-            break;
-        case 3:
-            menu_counter.innerHTML = '2/7'
-            break;
-        case 4:
-            menu_counter.innerHTML = '3/7'
-            break;
-        case 5:
-            menu_counter.innerHTML = '3/7'
-            break;
-        case 6:
-            menu_counter.innerHTML = '4/7'
-            break;
-        case 7:
-            menu_counter.innerHTML = '5/7'
-            break;
-        case 8:
-            menu_counter.innerHTML = '6/7'
-            break;
-        case 9:
-            menu_counter.innerHTML = '6/7'
-            break;
-        case 10:
-            menu_counter.innerHTML = '7/7'
-            break;
+    device_width = document.documentElement.clientWidth
 
-        default:
-            menu_counter.innerHTML = splide.index + '/7'
+    if (device_width > 600){
+        menu_counter.innerHTML = config_counter['desktop'].slideIndex[splide.index] + '/7'
+        
+    } else if (600 >= device_width ) {
+        menu_counter.innerHTML = config_counter['mobile'].slideIndex[splide.index] + '/7'
     }
-})
 
+})
 
 
 
