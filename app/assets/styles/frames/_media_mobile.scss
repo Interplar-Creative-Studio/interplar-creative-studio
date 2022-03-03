@@ -58,6 +58,10 @@
             margin-bottom: 8px;
         }
 
+        &_wrapper{
+            margin-top: -72px;
+        }
+
     }
 
     .license {
@@ -75,8 +79,13 @@
         flex-direction: column;
     }
 
+    footer .social_bar{
+        border: none;
+    }
+
     footer .footer_logo_wrapper {
         align-items: flex-start;
+        line-height: 22px;
     }
 
     footer .slogan {
@@ -86,11 +95,14 @@
     footer .social_bar {
         gap: 0px;
         align-items: flex-start;
+        text-align: end;
     }
 
     footer .email,
     footer .copyright {
         margin: 0px;
+        width: 100%;
+        line-height: 22px;
     }
 
     footer .email {

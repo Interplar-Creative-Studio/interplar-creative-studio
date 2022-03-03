@@ -102,6 +102,10 @@
             @include active()
         }
     }
+
+    .back{
+        display: none;
+    }
 }
 
 

@@ -32,4 +32,25 @@
     footer .copyright {
         font-size: 12px;
     }
+    footer .email{
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 1020px) {
+    .menu_btn{
+        margin-left: -6px;
+    }
+
+
+}
+
+@media screen and (max-width: 990px) {
+    .menu_btn{
+        margin-left: -36px;
+    }
+
+    .menu{
+        width: 100%;
+    }
 }
