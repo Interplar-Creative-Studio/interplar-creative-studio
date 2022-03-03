@@ -1,0 +1,198 @@
+//==========================
+// ANIMATION
+.nav.hide {
+    opacity: 0;
+
+}
+
+.intro {
+    opacity: 0;
+    transition: opacity 1.7s ease 0.3s;
+}
+
+.title {
+    opacity: 0;
+    transition: opacity 0.7s ease;
+}
+
+.content_wrapper {
+    opacity: 0;
+    transition: opacity 0.7s ease 1s;
+}
+
+.next {
+    opacity: 0;
+    transition: opacity 0.7s ease 1.5s;
+}
+
+
+.nav {
+    transition: opacity 0.7s ease;
+    opacity: 1;
+}
+
+.intro.is-visible {
+    opacity: 1;
+}
+
+section.is-visible .title {
+    opacity: 1;
+}
+
+section.is-visible .content_wrapper {
+    opacity: 1;
+}
+
+section.is-visible .next {
+    opacity: 1;
+}
+
+
+
+section::after {
+    content: ' ';
+    position: absolute;
+    background-image: url(../img/noise.png);
+    background-repeat: repeat-x;
+    width: 60%;
+    height: 59px;
+    right: 6.66%;
+    bottom: 0px;
+    opacity: 0;
+}
+
+section.is-visible::after{
+    // bottom: 100%;
+    animation: noise 0.2s ease 1s;
+}
+
+section.intro::after{
+    content: none;
+}
+
+@media screen and (max-width: 600px) {
+    section::after{
+        width: 100%;
+        right: 0px;
+    }
+
+    section.is-visible::after{
+        // bottom: 100%;
+        animation: noise 0.2s ease 0s;
+    }
+
+    .title {
+        transition: opacity 0.7s ease 0.4s;
+    }
+
+    .content_wrapper {
+        transition: opacity 0.7s ease 0.4s;
+    }
+
+    .next {
+        transition: opacity 0.7s ease 0.4s;
+    }
+}
+
+@keyframes noise {
+    0% {
+        opacity: 0.5;
+        background-position: 20px 20px;
+    }
+
+    4% {
+        background-position: -20px 20px;
+    }
+
+    7% {
+        background-position: 20px -20px;
+    }
+
+    15% {
+        background-position: 30px -10px;
+    }
+
+    21% {
+        background-position: -10px -20px;
+        opacity: 0.7;
+    }
+
+    26% {
+        background-position: 10px 25px;
+    }
+
+    31% {
+        background-position: 20px 20px;
+    }
+
+    33% {
+        background-position: -20px 20px;
+        opacity: 0.6;
+    }
+
+    39% {
+        background-position: 20px -20px;
+    }
+
+    45% {
+        background-position: 30px -10px;
+    }
+
+    51% {
+        background-position: -10px -20px;
+        opacity: 1;
+    }
+
+    56% {
+        background-position: 10px 25px;
+    }
+
+    58% {
+        background-position: 20px 20px;
+    }
+
+    64% {
+        background-position: -20px 20px;
+        opacity: 0.4;
+    }
+
+    70% {
+        background-position: 20px -20px;
+    }
+
+    72% {
+        background-position: 30px -10px;
+        opacity: 0.7;
+    }
+
+    77% {
+        background-position: -10px -20px;
+    }
+
+    84% {
+        background-position: 10px 25px;
+    }
+
+    90% {
+        background-position: 20px 20px;
+    }
+
+    93% {
+        background-position: -20px 20px;
+    }
+
+    98% {
+        bottom: 95%;
+        opacity: 1;
+        background-position: 20px -20px;
+    }
+
+    99% {
+        opacity: 0;
+    }
+
+    100% {
+
+        display: none;
+    }
+}

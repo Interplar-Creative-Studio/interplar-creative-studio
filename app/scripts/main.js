@@ -64,22 +64,21 @@ let inner_slider_config = {
     isNavigation: true,
     pagination: false,
     drag: false,
-    speed: 700,
+    speed: 500,
 }
 
 // прокрутка страницы (вертикальная)
 let splide = new Splide('.splide', {
     ...inner_slider_config,
     direction: 'ttb',
-    wheel: true
     wheel: true,
     breakpoints: {
         905: {
             drag: true,
             autoHeight: true,
-            dragMinThreshold: 1,
+            dragMinThreshold: 10,
             height: '100vh',
-        }
+        },
     }
 })
 splide.mount({ URLHash })
@@ -89,6 +88,16 @@ let contact_splide = new Splide('.contact_splide', {
     ...inner_slider_config,
 })
 contact_splide.mount({ URLHash })
+
+
+function setMenuCount(device_width){
+    if (device_width > 600){
+        menu_counter.innerHTML = config_counter['desktop'].slideIndex[splide.index] + '/7'
+        
+    } else if (600 >= device_width ) {
+        menu_counter.innerHTML = config_counter['mobile'].slideIndex[splide.index] + '/7'
+    }
+}
 
 const config_counter = {
     desktop : {
@@ -101,10 +110,10 @@ const config_counter = {
 
 let totop = document.querySelector('.totop');
 let device_width = document.documentElement.clientWidth
+
 if (device_width > 600) {
     splide.remove( '.prev' ); // Убираю псевдо-секции чтобы небыло тротлинга прокрутки
 
-    //
     // next  |=> clients_prev -> clients 3
     //       |=> team_prev    -> team 2
 
@@ -119,14 +128,31 @@ splide.on('move', function () {
     // SCROLL COUNTER (костыли XD)
     device_width = document.documentElement.clientWidth
 
-    if (device_width > 600){
-        menu_counter.innerHTML = config_counter['desktop'].slideIndex[splide.index] + '/7'
-        
-    } else if (600 >= device_width ) {
-        menu_counter.innerHTML = config_counter['mobile'].slideIndex[splide.index] + '/7'
-    }
+    setMenuCount(device_width)
 
 })
 
+// SCROLL ANIMATION || NAV HIDE ON INTRO PAGE
+let visible_block = document.querySelector('.is-visible')
+splide.on('move', function () {
 
+    visible_block.classList.remove('is-visible')
 
+    if (splide.index > 0){
+        if (nav.classList.contains('hide')) nav.classList.remove('hide')
+    } else {
+        nav.classList.add('hide')
+    }
+
+    setTimeout(()=>{
+        visible_block = document.querySelector('.is-visible')
+    }, 550)
+
+})
+
+if ( splide.state.is( Splide.STATES.IDLE ) ) {
+    if(splide.index == 0){
+        nav.classList.add('hide');
+    }
+    setMenuCount(device_width)
+  }
