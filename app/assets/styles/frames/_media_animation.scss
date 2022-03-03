@@ -1,0 +1,29 @@
+@media screen and (max-width: 600px) {
+
+    section.notnoise::after{
+        content: ' ';
+    }
+
+    section::after{
+        width: 100%;
+        right: 0px;
+    }
+
+    section.is-visible::after{
+        // вкдючить / выключить noise
+        // animation: noise 0.2s ease 0s;
+        animation: none;
+    }
+
+    .title {
+        transition: opacity 0.7s ease 0.4s;
+    }
+
+    .content_wrapper {
+        transition: opacity 0.7s ease 0.4s;
+    }
+
+    .next {
+        transition: opacity 0.7s ease 0.4s;
+    }
+}
