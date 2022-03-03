@@ -7,15 +7,18 @@ section#recruitment.splide__slide(data-splide-hash="recruitment")
             .content_wrapper.col
                 .content_inner
                     form.form(action="")
-                        label(for="offer_fio") Контактные данные
-                        input(type="text" name="offer_fio" class="form_fio" placeholder="Имя и фамилия")
-                        input(type="email" name="offer_email" class="form_email" placeholder="Email") 
+                        label(for="recruit_fio") Контактные данные
+                        input(type="text" name="recruit_fio" class="form_fio" placeholder="Имя и фамилия")
+                        input(type="email" name="recruit_email" class="form_email" placeholder="Email") 
 
-                        label(for="offer_task") Расскажи о себе
-                        textarea(name="task" cols="30" rows="8" class="form_message" placeholder="Максимально подробно")
+                        label(for="recruit_task") Расскажи о себе
+                        textarea(name="recruit_task" cols="30" rows="8" class="form_message" placeholder="Максимально подробно")
 
-                        label(for="offer_file") Прикрепи файлы
-                        input(type="file" name="offer_file" class="form_file" placeholder="pdf, jpeg, docx, ppt")
+                        label(for="#") Прикрепи файлы
+                        <label class="form_file_mine" for="recruit_file">
+                            <span class="form_file_text" id="recruit_file_text">pdf, jpeg, docx, ppt</span>
+                        </label>
+                        input(type="file" name="recruit_file" class="form_file" id="recruit_file" placeholder="pdf, jpeg, docx, ppt")
 
                 .content_inner.content_btn.flex
                     a.btn(href="#") отправить заявку

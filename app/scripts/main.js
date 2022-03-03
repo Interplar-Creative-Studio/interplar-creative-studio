@@ -188,3 +188,31 @@ if ( splide.state.is( Splide.STATES.IDLE ) ) {
     }
     setMenuCount(device_width)
   }
+
+// FILE INPUT
+// Кастомизация инпута
+document.getElementById('offer_file').addEventListener('change', function (e) {
+    // Проверяем, что только 1 файл был выбран
+    if (this.files && this.files.length == 1) {
+        const textContainer = document.querySelector('#offer_file_text');
+        const fileName = e.target.value.split('\\').pop();
+        if (textContainer) {
+            textContainer.textContent = fileName || 'pdf, jpeg, docx, ppt';
+            return true;
+        }
+    }
+    return false;
+});
+
+document.getElementById('recruit_file').addEventListener('change', function (e) {
+    // Проверяем, что только 1 файл был выбран
+    if (this.files && this.files.length == 1) {
+        const textContainer = document.querySelector('#recruit_file_text');
+        const fileName = e.target.value.split('\\').pop();
+        if (textContainer) {
+            textContainer.textContent = fileName || 'pdf, jpeg, docx, ppt';
+            return true;
+        }
+    }
+    return false;
+});

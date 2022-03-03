@@ -18,10 +18,13 @@ section#feedback.splide__slide(data-splide-hash="feedback")
                         input(type="email" name="offer_email" class="form_email" placeholder="Email") 
 
                         label(for="offer_task") Опишите задачу
-                        textarea(name="task" cols="30" rows="8" class="form_message" placeholder="Максимально подробно")
+                        textarea(name="offer_task" cols="30" rows="8" class="form_message" placeholder="Максимально подробно")
 
-                        label(for="offer_file") Прикрепите файлы
-                        input(type="file" name="offer_file" class="form_file" placeholder="pdf, jpeg, docx, ppt")
+                        label(for="#") Прикрепите файлы
+                        <label class="form_file_mine" for="offer_file">
+                            <span class="form_file_text" id="offer_file_text">pdf, jpeg, docx, ppt</span>
+                        </label>
+                        input(type="file" name="offer_file" class="form_file" id="offer_file" placeholder="pdf, jpeg, docx, ppt")
 
                 .content_inner.content_btn.flex
                     a.btn(href="#") отправить заявку

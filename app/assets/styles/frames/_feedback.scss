@@ -12,7 +12,7 @@
     }
 
     input,
-    textarea {
+    textarea,.form_file_mine {
         border: 1px solid #fff;
         background-color: #0E0E0E;
         font-size: $size_form;
@@ -24,10 +24,16 @@
         border-radius: 0px;
     }
 
-    .form_file{
+    .form_file_mine{
         margin-bottom: 4px;
     }
 
+    .form_file {
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: 100%;
+    }
     // TODO: фейк загрузка файлов
 }
 
