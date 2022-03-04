@@ -29,9 +29,9 @@ menu_back.addEventListener("click", function () {
 
 
 // Закрытие меню после клика на кнопку в мобильной версии
-if (device_width < 600){
+if (device_width < 600) {
     nav_links.forEach(element => {
-        element.addEventListener("click", function() {
+        element.addEventListener("click", function () {
             nav.classList.toggle("active")
             menu_bar.classList.toggle("active")
             menu_toggler.classList.toggle("active")
@@ -86,6 +86,7 @@ window.addEventListener('resize', () => {
 // SCROLL SECTIONS
 import { Splide } from '@splidejs/splide';
 import { URLHash } from '@splidejs/splide-extension-url-hash';
+import { EventInterface } from '@splidejs/splide';
 
 // конфиг для слайдера
 let inner_slider_config = {
@@ -96,7 +97,12 @@ let inner_slider_config = {
     isNavigation: true,
     pagination: false,
     drag: false,
-    speed: 500,
+    speed: 700,
+    type: 'fade',
+    flickMaxPages: 1,
+    waitForTransition: true,
+    releaseWheel: false
+
 }
 
 // прокрутка страницы (вертикальная)
@@ -113,6 +119,7 @@ let splide = new Splide('.splide', {
         },
     }
 })
+// splide.mount({ URLHash })
 splide.mount({ URLHash })
 
 // прокрутка горизонтальная в блоке контакты
@@ -122,28 +129,28 @@ let contact_splide = new Splide('.contact_splide', {
 contact_splide.mount({ URLHash })
 
 // функция для установки правильного значения на счётчике
-function setMenuCount(device_width){
-    if (device_width > 600){
+function setMenuCount(device_width) {
+    if (device_width > 600) {
         menu_counter.innerHTML = config_counter['desktop'].slideIndex[splide.index] + '/7'
-        
-    } else if (600 >= device_width ) {
+
+    } else if (600 >= device_width) {
         menu_counter.innerHTML = config_counter['mobile'].slideIndex[splide.index] + '/7'
     }
 }
 
 // конфиг счётчика
 const config_counter = {
-    desktop : {
-        slideIndex : [0, 1, 2, 2, 3, 3, 4, 5, 6, 6, 7, 7]
+    desktop: {
+        slideIndex: [1, 1, 2, 2, 3, 3, 4, 5, 6, 6, 7, 7]
     },
-    mobile : {
-        slideIndex : [0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7]
+    mobile: {
+        slideIndex: [1, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7]
     }
 }
 
 // Убираю псевдо-секции на больших экранах, чтобы не было тротлинга прокрутки
 if (device_width > 600) {
-    splide.remove( '.prev' ); 
+    splide.remove('.prev');
 
     // next  |=> clients_prev -> clients 3
     //       |=> team_prev    -> team 2
@@ -169,25 +176,39 @@ splide.on('move', function () {
 
     visible_block.classList.remove('is-visible') // руками убираю класс, т.к. библиотека делает это с задержкой
 
-    if (splide.index > 0){
+    if (splide.index > 0) {
         if (nav.classList.contains('hide')) nav.classList.remove('hide')
     } else {
         nav.classList.add('hide')
     }
 
-    setTimeout(()=>{
+    setTimeout(() => {
         visible_block = document.querySelector('.is-visible')
-    }, 550)
-
+    }, 750)
 })
 
+// splide.on('inactive', function(slide){
+//     console.log(slide.slide);
+
+//     let last_title = slide.slide.querySelectorAll('.title')
+//     if (last_title != null) last_title.forEach(e=>e.style = {'opacity': 0})
+
+//     let last_content = slide.slide.querySelectorAll('.content_wrapper')
+//     if (last_content != null) last_content.forEach(e=>e.style = {'opacity': 0})
+
+//     let last_next = slide.slide.querySelector('.next')
+//     console.log(last_next);
+//     if (last_next != null) last_next.style = {'opacity': 0}
+// })
+
+
 // инициализация счётчика при загрузке страницы
-if ( splide.state.is( Splide.STATES.IDLE ) ) {
-    if(splide.index == 0){
+if (splide.state.is(Splide.STATES.IDLE)) {
+    if (splide.index == 0) {
         nav.classList.add('hide');
     }
     setMenuCount(device_width)
-  }
+}
 
 // FILE INPUT
 // Кастомизация инпута
