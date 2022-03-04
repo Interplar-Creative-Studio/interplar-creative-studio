@@ -6,7 +6,6 @@
 
 .intro h1{
     opacity: 0;
-    transition: opacity 1.7s ease 0.3s;
 }
 
 .title {
@@ -27,7 +26,8 @@
 }
 
 .intro.is-visible h1{
-    opacity: 1;
+    animation: appear 1.7s ease 0.3s;
+    animation-fill-mode: forwards;
 }
 
 section.is-visible .title {
