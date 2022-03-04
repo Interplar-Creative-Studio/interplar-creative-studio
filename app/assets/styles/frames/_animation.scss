@@ -11,17 +11,14 @@
 
 .title {
     opacity: 0;
-    transition: opacity 0.7s ease;
 }
 
 .content_wrapper {
     opacity: 0;
-    transition: opacity 0.7s ease 0.5s;
 }
 
 .next {
     opacity: 0;
-    transition: opacity 0.7s ease 0.8s;
 }
 
 .nav {
@@ -34,15 +31,20 @@
 }
 
 section.is-visible .title {
-    opacity: 1;
+    animation: appear 0.7s ease;
+    animation-fill-mode: forwards;
+
 }
 
 section.is-visible .content_wrapper {
-    opacity: 1;
+    animation: appear 0.7s ease 0.5s;
+    animation-fill-mode: forwards;
+
 }
 
 section.is-visible .next {
-    opacity: 1;
+    animation: appear 0.7s ease 0.8s;
+    animation-fill-mode: forwards;
 }
 
 
@@ -172,5 +174,20 @@ section.notnoise::after{
     100% {
 
         display: none;
+    }
+}
+
+@keyframes appear {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+    1% {
+        display: block;
+        opacity: 0;
+    }
+    100% {
+        display: block;
+        opacity: 1;
     }
 }
