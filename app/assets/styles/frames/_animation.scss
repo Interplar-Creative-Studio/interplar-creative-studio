@@ -31,19 +31,19 @@
 }
 
 section.is-visible .title {
-    animation: appear 0.7s ease;
+    animation: appear 1.7s ease 0.3s;
     animation-fill-mode: forwards;
 
 }
 
 section.is-visible .content_wrapper {
-    animation: appear 0.7s ease 0.5s;
+    animation: appear 1.7s ease 0.7s;
     animation-fill-mode: forwards;
 
 }
 
 section.is-visible .next {
-    animation: appear 0.7s ease 0.8s;
+    animation: appear 1.7s ease 0.9s;
     animation-fill-mode: forwards;
 }
 
@@ -63,7 +63,7 @@ section::after {
 
 section.is-visible::after{
     // bottom: 100%;
-    animation: noise 0.2s cubic-bezier(0.85, 0, 0.15, 1) 0.4s;
+    animation: noise 0.2s cubic-bezier(0.85, 0, 0.15, 1) 0.6s;
 }
 
 section.intro::after{

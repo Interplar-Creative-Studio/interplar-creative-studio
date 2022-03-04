@@ -182,25 +182,10 @@ splide.on('move', function () {
         nav.classList.add('hide')
     }
 
-    setTimeout(() => {
+    setTimeout(() => { // обновляю информацию о корректном блоке
         visible_block = document.querySelector('.is-visible')
     }, 750)
 })
-
-// splide.on('inactive', function(slide){
-//     console.log(slide.slide);
-
-//     let last_title = slide.slide.querySelectorAll('.title')
-//     if (last_title != null) last_title.forEach(e=>e.style = {'opacity': 0})
-
-//     let last_content = slide.slide.querySelectorAll('.content_wrapper')
-//     if (last_content != null) last_content.forEach(e=>e.style = {'opacity': 0})
-
-//     let last_next = slide.slide.querySelector('.next')
-//     console.log(last_next);
-//     if (last_next != null) last_next.style = {'opacity': 0}
-// })
-
 
 // инициализация счётчика при загрузке страницы
 if (splide.state.is(Splide.STATES.IDLE)) {

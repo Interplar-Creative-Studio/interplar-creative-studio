@@ -112,7 +112,20 @@
     .next,
     .back {
         // bottom: 24px;
-        bottom: 24px; // Мб этот стиль следовало перенести в _media_tablet_min.scss
+        bottom: 8%; // Мб этот стиль следовало перенести в _media_tablet_min.scss
+        z-index: 800;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .next::before,
+    .back::before {
+        top: 20px;
+    }
+
+    .next::after,
+    .back::after {
+        top: 20px;
     }
 
     // footer{
