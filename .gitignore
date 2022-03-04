@@ -1,4 +1,5 @@
-build/
+app/
+app/*
 **/*:Zone.Identifier
 
 # Logs
