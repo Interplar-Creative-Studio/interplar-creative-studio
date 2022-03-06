@@ -171,7 +171,6 @@ splide.on('move', function () {
     // SCROLL COUNTER (костыли XD)
     device_width = document.documentElement.clientWidth
     setMenuCount(device_width)
-
 })
 
 // SCROLL ANIMATION || NAV HIDE ON INTRO PAGE
@@ -226,3 +225,16 @@ document.getElementById('recruit_file').addEventListener('change', function (e) 
     }
     return false;
 });
+
+
+// fix-space on input form
+let inputs = document.querySelectorAll('input[type=text], textarea[name="offer_task"], textarea[name="recruit_task"]')
+console.log(inputs);
+inputs.forEach((elem) => {
+    elem.addEventListener('keydown', function(e){
+        if (e.code == 'Space'){
+            e.target.value += ' '
+        }
+    });
+})
+

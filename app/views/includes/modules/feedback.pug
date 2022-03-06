@@ -21,9 +21,8 @@ section#feedback.splide__slide(data-splide-hash="feedback")
                         textarea(name="offer_task" cols="30" rows="8" class="form_message" placeholder="Максимально подробно")
 
                         label(for="#") Прикрепите файлы
-                        <label class="form_file_mine" for="offer_file">
-                            <span class="form_file_text" id="offer_file_text">pdf, jpeg, docx, ppt</span>
-                        </label>
+                        label(class="form_file_mine" for="offer_file")
+                            span(class="form_file_text" id="offer_file_text") pdf, jpeg, docx, ppt
                         input(type="file" name="offer_file" class="form_file" id="offer_file" placeholder="pdf, jpeg, docx, ppt")
 
                 .content_inner.content_btn.flex
