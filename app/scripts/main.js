@@ -176,10 +176,10 @@ splide.on('move', function () {
 
     visible_block.classList.remove('is-visible') // руками убираю класс, т.к. библиотека делает это с задержкой
 
-    if (splide.index > 0) {
-        if (nav.classList.contains('hide')) nav.classList.remove('hide')
+    if (splide.index == 0) {
+        nav.classList.remove('show')
     } else {
-        nav.classList.add('hide')
+        nav.classList.add('show')
     }
 
     setTimeout(() => { // обновляю информацию о корректном блоке
@@ -189,8 +189,8 @@ splide.on('move', function () {
 
 // инициализация счётчика при загрузке страницы
 if (splide.state.is(Splide.STATES.IDLE)) {
-    if (splide.index == 0) {
-        nav.classList.add('hide');
+    if (splide.index != 0) {
+        nav.classList.add('show');
     }
     setMenuCount(device_width)
 }

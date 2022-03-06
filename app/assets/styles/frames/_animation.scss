@@ -1,7 +1,7 @@
 //==========================
 // ANIMATION
-.nav.hide {
-    opacity: 0;
+.nav.show {
+    opacity: 1;
 }
 
 .intro h1{
@@ -22,7 +22,7 @@
 
 .nav {
     transition: opacity 0.7s ease;
-    opacity: 1;
+    opacity: 0;
 }
 
 .intro.is-visible h1{
