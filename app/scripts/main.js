@@ -229,7 +229,6 @@ document.getElementById('recruit_file').addEventListener('change', function (e) 
 
 // fix-space on input form
 let inputs = document.querySelectorAll('input[type=text], textarea[name="offer_task"], textarea[name="recruit_task"]')
-console.log(inputs);
 inputs.forEach((elem) => {
     elem.addEventListener('keydown', function(e){
         if (e.code == 'Space'){
@@ -237,4 +236,19 @@ inputs.forEach((elem) => {
         }
     });
 })
+// принудительно закрываем клаву
+splide.on('move', function(){
+    inputs.forEach((elem) => elem.blur())
+})
 
+
+// Попытки убрать авто скролл
+// document.addEventListener("DOMContentLoaded", function(event) { 
+//     var scrollpos = localStorage.getItem('interplar_splide_index');
+//     // if (scrollpos) window.scrollTo(0, scrollpos);
+//     if (scrollpos) splide.go(scrollpos-1)
+// });
+
+// window.onbeforeunload = function(e) {
+//     localStorage.setItem('interplar_splide_index', splide.index);
+// };
