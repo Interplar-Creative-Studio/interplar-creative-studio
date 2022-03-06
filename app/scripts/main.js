@@ -100,8 +100,12 @@ let inner_slider_config = {
     speed: 700,
     type: 'fade',
     flickMaxPages: 1,
+    flickPower: 800,
     waitForTransition: true,
-    releaseWheel: false
+    releaseWheel: true,
+    keyboard: false,
+    slideFocus: false,
+    noDrag: 'input, textarea, form, .no-drag'
 
 }
 
