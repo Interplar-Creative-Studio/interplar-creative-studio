@@ -26,6 +26,13 @@
         line-height: 20px;
     }
 
+    input::placeholder{
+        color: rgb(117, 117, 117);
+    }
+    textarea::placeholder{
+        color: rgb(117, 117, 117);
+    }
+
     .form_file_mine{
         margin-bottom: 4px;
         padding: 6px 16px;
@@ -36,6 +43,9 @@
         opacity: 0;
         top: 0;
         right: 100%;
+        &_text{
+            color: rgb(117, 117, 117);
+        }
     }
     // TODO: фейк загрузка файлов
 }
